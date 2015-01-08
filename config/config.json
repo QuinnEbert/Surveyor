@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "surveyor_db",
+    "password": "surveyor_db",
+    "database": "surveyor_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "surveyor_db",
+    "password": "surveyor_db",
+    "database": "surveyor_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "surveyor_db",
+    "password": "surveyor_db",
+    "database": "surveyor_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

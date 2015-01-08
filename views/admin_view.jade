@@ -1,0 +1,15 @@
+extends layout
+block content
+  div(data-role='header',class='ui-header ui-bar-b')
+    h1 #{title} Admin
+  div(data-role='content',class='ui-content')
+    table(cellspacing="0",border="0",cellpadding="8")
+      tr
+        td
+          strong Email
+        td
+          strong Answered
+      each answer in answers
+        tr
+          td #{answer.Guest.email}
+          td #{answer.answer}

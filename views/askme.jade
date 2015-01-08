@@ -1,0 +1,13 @@
+extends layout
+block content
+  h1= title
+  p
+    em We've got a question for you...
+  p #{question}
+  form(action="/askme", method="post")
+    each answer in answers
+      input(type="radio", name="answer", id="answer-radio-"+answer, value=answer)
+      label(for="answer-radio-"+answer) #{answer}
+    br
+    input(type="hidden", name="question", value=qid)
+    input(type="submit", value="Submit")

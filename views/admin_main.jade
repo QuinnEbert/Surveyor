@@ -1,0 +1,33 @@
+extends layout
+block content
+  div(data-role='header',class='ui-header ui-bar-b')
+    h1 #{title} Admin
+  div(data-role='content',class='ui-content')
+    p
+      u
+        strong Questions
+    table(cellspacing="0",border="0",cellpadding="8")
+      tr
+        td
+          strong Question
+        td
+          strong Choices
+        td
+          strong Answers
+      each question in questions
+        tr
+          td #{question.question}
+          td #{question.answers}
+          td
+            a(href="/admin/"+question.id+"/view")
+              [View]
+    hr
+    p
+      u
+        strong Add Question
+    form(action="/admin", method="post")
+      label(for="field-q") Question:
+      input(type="text", id="field-q", name="question", placeholder="How about a question?")
+      label(for="field-a") Answers:
+      input(type="text", id="field-a", name="answers", placeholder="separate,choices,with,commas")
+      input(type="submit", value="Submit")

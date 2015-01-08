@@ -1,0 +1,10 @@
+extends layout
+block content
+  h1= title
+  p Welcome to #{title}
+  p Can I have your e-mail address, please?
+  p
+    em It'll be kept just between you and us!</em>
+  form(action="/askme", method="post")
+    input(type="text", name="email", placeholder="E-mail address")
+    input(type="submit", value="Submit")
