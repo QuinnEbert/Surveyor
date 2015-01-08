@@ -69,7 +69,7 @@ function admin_check_userpass(req, res, then) {
 	models.Admin.findAll({where: ["`base_key`=?",p]}).then(function(auth_res) {
 	  if (auth_res.length) {
 		models.Question.findAll().then(function(questions) {
-		  console.log("Auth OK, saved credo");
+		  console.log("Auth OK, saved credo "+p);
 		  then(req, res, true, questions);
 		});
 	  } else {
@@ -96,6 +96,7 @@ function admin_check_needs_init(req, res, then) {
 
 function admin_final_render(req, res, jade, data) {
   res.render(jade, data);
+  admin_sess = null;
 }
 
 function admin_main(req, res) {

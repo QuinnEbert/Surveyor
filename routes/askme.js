@@ -73,6 +73,7 @@ function askme_final_render(req, res) {
       }
     });
   });
+  guest_name = null;
 }
 
 function askme_common(req, res) {
