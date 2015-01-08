@@ -50,20 +50,26 @@ function askme_final_render(req, res) {
         }
       }
       console.log("Chose Q id: "+id.toString());
-      if (id >= 0) {
-        var question = questions[id].question;
-        var answers = questions[id].answers.split(',');
-        var qid = questions[id].id.toString();
-        res.render('askme', {
-          title: 'Surveyor',
-          question: question,
-          answers: answers,
-          qid: qid
-        });
-      } else {
+      if (!questions.length) {
         res.render('askme_none', {
           title: 'Surveyor'
         });
+      } else {
+        if (id >= 0) {
+          var question = questions[id].question;
+          var answers = questions[id].answers.split(',');
+          var qid = questions[id].id.toString();
+          res.render('askme', {
+            title: 'Surveyor',
+            question: question,
+            answers: answers,
+            qid: qid
+          });
+        } else {
+          res.render('askme_none', {
+            title: 'Surveyor'
+          });
+        }
       }
     });
   });
