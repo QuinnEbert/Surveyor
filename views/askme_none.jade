@@ -1,8 +1,10 @@
 extends layout
 block content
-  h1= title
-  p
-    strong Our apologies...
-  p We've no more questions for you right now.
-  p
-    em Please check back with us later!
+  div(data-role='header',class='ui-header ui-bar-b')
+    h1= title
+  div(data-role='content',class='ui-content')
+    p
+      strong Our apologies...
+    p We've no more questions for you right now.
+    p
+      em Please check back with us later!
