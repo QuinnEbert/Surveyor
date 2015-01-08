@@ -24,9 +24,9 @@ else
   else
     if [ "$mysql_pw" == '' ]; then
       echo 'Please enter the MySQL root password:'
-      echo $dbmakes | mysql -u root -p
+      echo $dbmakes | $sql -u root -p
     else
-      echo $dbmakes | mysql -u root -p"$mysql_pw"
+      echo $dbmakes | $sql -u root -p"$mysql_pw"
     fi
     $npm install
     $npm start
